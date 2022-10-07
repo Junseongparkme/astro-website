@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "@astrojs/react": "^1.1.4",
-    "astro": "^1.4.2"
+    "astro": "^1.4.5"
   }
 }
