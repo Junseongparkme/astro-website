@@ -1,4 +1,21 @@
 ---
+import '../styles/global.css'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const pageTitle = "About Me"
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const headingColor = "red"
+const skillColor = "green"
+const skillWeight = "bold"
 ---
 
 <html lang="en">
@@ -7,22 +24,27 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+    <style define:vars={{headingColor, skillColor, skillWeight}}>
+      h1 {
+        color: var(--headingColor);
+        font-size: 2rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--skillWeight);
+      }
+    </style>
 	</head>
 	<body>
+   <Header />
+    <h1>My name is {identity.firstName} from {identity.country} and I am working as {identity.occupation}</h1>
+    <h2>My skills are</h2>
     <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="/blog">Blog</a>
-      </li>
+      {skills.map((skill) => (
+        <li class="skill">{skill}</li>
+      ))}
     </ul>
-		<h1>About Me</h1>
-    <h2>Welcome to my Blog!</h2>
-    <p>I'm interested in Web Development!</p>
+    <Footer />
 	</body>
 </html>
