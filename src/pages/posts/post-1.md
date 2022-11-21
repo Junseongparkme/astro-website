@@ -1,9 +1,10 @@
 ---
-title: "My first post"
+layout: '../../layouts/MarkdownPostLayout.astro'
+title: 'My first post'
 pubDate: 2022-11-21
-description: "This is my first post"
-author: "UXev"
-tags: ["astro", "javascript"]
+description: 'This is my first post'
+author: 'UXev'
+tags: ['astro', 'javascript']
 ---
 
 # My First Post
